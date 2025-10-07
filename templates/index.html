@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SOS Game - Survive at all costs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- HERO (TOP) -->
+<section id="hero" class="hero">
+  <nav class="topbar">
+    <!-- Logo -->
+    <a class="brand" href="#hero" aria-label="SOS Home">
+      <!-- <img src="{{ url_for('static', filename='images/sos-logo.png') }}" alt="SOS"> -->
+      <span class="brand-fallback">SOS</span>
+    </a>
+
+    <!-- Menu central -->
+    <ul class="main-nav">
+      <li><a href="#hero">MAIN</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#features">GAME FEATURES</a></li>
+      <li><a href="#requirements">SYSTEM REQUIREMENTS</a></li>
+      <li><a href="#quotes">QUOTES</a></li>
+    </ul>
+
+    <!-- Zone droite : langue + plateformes -->
+    <div class="right-zone">
+      <!-- Sélecteur de langue (UI) -->
+      <div class="lang" id="lang">
+        <button class="lang-toggle" aria-haspopup="listbox" aria-expanded="false">
+          <span class="lang-current">ENG</span> <i class="fa-solid fa-angle-down"></i>
+        </button>
+        <ul class="lang-menu" role="listbox" aria-label="Select language">
+          <li role="option" data-lang="RUS">RUS</li>
+          <li role="option" data-lang="FRA">FRA</li>
+          <li role="option" data-lang="DEU">DEU</li>
+        </ul>
+      </div>
+
+      <!-- Icônes plateformes (visuel uniquement) -->
+      <a class="plat" href="#" aria-label="Xbox"><i class="fab fa-xbox"></i></a>
+      <a class="plat" href="#" aria-label="Steam"><i class="fab fa-steam"></i></a>
+    </div>
+  </nav>
+
+  <!-- Contenu central -->
+  <div class="hero-content">
+    <h1 class="hero-title">SURVIVE AT ALL COSTS</h1>
+    <p class="hero-sub">EXPERIENCE NEW SOCIAL BATTLE ROYALE GAME</p>
+
+    <a href="#" class="btn-buy">
+      <span>Buy now on Steam</span>
+      <span class="price">| $14.99</span>
+    </a>
+  </div>
+
+  <!-- Bouton "THE STORY" qui scrolle vers la section suivante -->
+  <button id="story-btn" class="story-btn" aria-label="Scroll to the story">
+    <span>THE STORY</span>
+    <i class="fa-solid fa-angle-down"></i>
+  </button>
+</section>
+
+
+<!--------------------------------- SECTION2: WHAT IS SOS? -------------------->
+<section id="about" class="about-maq">
+  <div class="container about-grid">
+
+    <!-- Colonne gauche -->
+    <div class="about-left">
+      <p class="eyebrow">WHAT IS SOS?</p>
+
+      <h2 class="about-title">
+        SOCIAL BATTLE<br>ROYALE GAME
+      </h2>
+
+      <!-- Ligne de séparation -->
+      <span class="about-rule" aria-hidden="true"></span>
+
+      <div class="about-copy">
+        <p>
+          Each round, <strong>you</strong> and <strong>15</strong> other contestants
+          compete to escape a deadly island filled with monsters. The trick is:
+          three people can survive. Will you run solo or form friendships with others to escape?
+        </p>
+        <p>
+          Making the right decisions could be the difference between life and death.
+          <span class="hl"></span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Colonne droite : slider -->
+<div class="sos-slider" id="sosSlider"
+     data-imgs='[
+       "{{ url_for("static", filename="images/sos1.jpg") }}",
+       "{{ url_for("static", filename="images/sos2.jpg") }}",
+       "{{ url_for("static", filename="images/sos3.jpg") }}"
+     ]'>
+
+  <!-- Pile d’images -->
+  <img class="card plate back-2"
+       src="{{ url_for('static', filename='images/sos2.jpg') }}" alt="">
+  <img class="card plate back-1"
+       src="{{ url_for('static', filename='images/sos3.jpg') }}" alt="">
+  <img class="card slide is-active"
+       src="{{ url_for('static', filename='images/sos1.jpg') }}" alt="">
+
+<button class="ctrl ctrl-next" type="button" aria-label="Next">
+  <svg class="tri" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <polygon points="6,3 20,12 6,21"
+             fill="none" stroke="#fff" stroke-width="2.4"
+             stroke-linejoin="round" stroke-linecap="round"/>
+  </svg>
+</button>
+
+  <div class="dots" role="tablist" aria-label="Screenshots">
+    <button role="tab" aria-selected="true"  data-i="0" class="dot is-active"></button>
+    <button role="tab" aria-selected="false" data-i="1" class="dot"></button>
+    <button role="tab" aria-selected="false" data-i="2" class="dot"></button>
+  </div>
+</div>
+
+  </div>
+</section>
+
+
+<!---------------------- SECTION 3 : FEATURES ---------------------------------------->
+<section id="features" class="features">
+  <div class="container">
+
+    <!-- Colonne droite : liste des features -->
+    <div class="feat-list">
+      <p class="eyebrow">WHAT’S SO SPECIAL?</p>
+      <h1 class="title-xl">FEATURES</h1>
+
+<div class="accordion timeline">
+  <div class="accordion-item active">
+    <h3 class="accordion-header">SURVIVE AT ALL COSTS</h3>
+    <div class="accordion-content">
+      <p>You have 30 minutes to find a relic, signal for extraction, and grab one of three spots on the rescue chopper.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h3 class="accordion-header">CREATE ALLIES AND ENEMIES</h3>
+    <div class="accordion-content">
+      <p>Team up with others—or betray them—your social choices shape every round.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <h3 class="accordion-header">IMPRESS THE AUDIENCE</h3>
+    <div class="accordion-content">
+      <p>Make bold plays to get noticed. The crowd rewards the most entertaining survivors.</p>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+<!------------------------- SECTION 4 : SYSTEM REQUIREMENTS --------------------->
+<section id="requirements" class="req">
+  <div class="container">
+
+    <header class="req-header">
+      <p class="eyebrow">CAN MY COMPUTER RUN THIS GAME?</p>
+      <h2 class="title-xxl">SYSTEM REQUIREMENTS</h2>
+    </header>
+
+    <div class="req-area">
+      <div class="req-card" role="table" aria-label="System requirements">
+        <div class="req-row">
+          <div class="req-key">OS:</div>
+          <div class="req-val">Windows 7 64-bit only (No OSX support at this time)</div>
+        </div>
+        <div class="req-row">
+          <div class="req-key">PROCESSOR:</div>
+          <div class="req-val">Intel Core 2 Duo @ 2.4 GHz<br>or AMD Athlon X2 @ 2.8 GHz</div>
+        </div>
+        <div class="req-row">
+          <div class="req-key">MEMORY:</div>
+          <div class="req-val">8 GB RAM</div>
+        </div>
+        <div class="req-row">
+          <div class="req-key">STORAGE:</div>
+          <div class="req-val">8 GB available space</div>
+        </div>
+        <div class="req-row">
+          <div class="req-key">GRAPHICS:</div>
+          <div class="req-val">NVIDIA GeForce GTX 660 2GB<br>or AMD Radeon HD 7850 2GB (DirectX 11 / Shader Model 5)</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!------------------------------------ SECTION 5 : PRESS QUOTES ---------------------------------------------->
+<section id="quotes" class="quotes">
+  <div class="container quotes-layout">
+
+    <!-- Colonne gauche -->
+    <div class="quotes-left">
+      <p class="eyebrow">WHAT PEOPLE THINK?</p>
+      <h2 class="title-xl quotes-title">PRESS QUOTES</h2>
+      <p class="quotes-lead">
+        Our goal is to create a product and service that you’re satisfied with and use it every day.
+        This is why we’re constantly working on our services to make it better every day and really
+        listen to what our users have to say.
+      </p>
+
+      <a href="#" class="btn-primary quotes-btn">Read more testimonials</a>
+    </div>
+
+    <!-- Colonne droite : pile décalée -->
+    <div class="quotes-right quotes-stack">
+
+      <!-- Carte 1 -->
+      <article class="quote-card">
+        <button class="q-twitter" aria-label="Open tweet"><i class="fab fa-twitter"></i></button>
+        <div class="q-top">
+          <span class="q-avatar">
+            <img src="{{ url_for('static', filename='images/quote-evan.jpg') }}" alt="Evan Lahti portrait">
+          </span>
+          <div class="q-head">
+            <span class="q-author">EVAN LAHTI</span>
+            <span class="q-source">PC Gamer</span>
+          </div>
+        </div>
+        <p class="q-text">“One of my gaming highlights of the year.”</p>
+        <p class="q-date">October 18, 2018</p>
+      </article>
+
+      <!-- Carte 2 -->
+      <article class="quote-card">
+        <button class="q-twitter" aria-label="Open tweet"><i class="fab fa-twitter"></i></button>
+        <div class="q-top">
+          <span class="q-avatar">
+            <img src="{{ url_for('static', filename='images/quote-jada.jpg') }}" alt="Jada Griffin portrait">
+          </span>
+          <div class="q-head">
+            <span class="q-author">JADA GRIFFIN</span>
+            <span class="q-source">Nerdreactor</span>
+          </div>
+        </div>
+        <p class="q-text">“The next big thing in the world of streaming and survival games.”</p>
+        <p class="q-date">December 21, 2018</p>
+      </article>
+
+      <!-- Carte 3 -->
+      <article class="quote-card">
+        <button class="q-twitter" aria-label="Open tweet"><i class="fab fa-twitter"></i></button>
+        <div class="q-top">
+          <span class="q-avatar">
+            <img src="{{ url_for('static', filename='images/quote-aaron.jpg') }}" alt="Aaron Williams portrait">
+          </span>
+          <div class="q-head">
+            <span class="q-author">AARON WILLIAMS</span>
+            <span class="q-source">Uproxx</span>
+          </div>
+        </div>
+        <p class="q-text">“Snoop Dogg Playing The Wildly Entertaining ‘SOS’ Is Ridiculous.”</p>
+        <p class="q-date">December 24, 2018</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!----------------------------------- SECTION : NEWSLETTER ---------------->
+<section class="newsletter-section" id="newsletter">
+  <div class="container">
+    <div class="nl-content">
+      <p class="eyebrow">WANT TO STAY IN TOUCH?</p>
+      <h2 class="nl-title">NEWSLETTER SUBSCRIBE</h2>
+
+      <p class="nl-text">
+        In order to start receiving our news, all you have to do is enter your email
+        address. Everything else will be taken care of by us. We will send you emails
+        containing information about game. We don’t spam.
+      </p>
+
+      <form class="nl-form" action="#" method="post" onsubmit="return false;">
+        <input class="nl-input" type="email" placeholder="Your email address" required>
+        <button class="nl-btn" type="submit">Subscribe now</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- FOOTER (style maquette) -->
+<footer class="footer">
+  <div class="container">
+
+    <!-- Ligne 1 : logo / nav / réseaux -->
+    <div class="footer-top">
+      <div class="footer-logo">
+        <!-- <img src="{{ url_for('static', filename='images/sos-logo.png') }}" alt="SOS" /> -->
+        <span class="logo-text">SOS</span>
+      </div>
+
+      <ul class="footer-nav">
+        <li><a href="#hero">MAIN</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#features">GAME FEATURES</a></li>
+        <li><a href="#requirements">SYSTEM REQUIREMENTS</a></li>
+        <li><a href="#quotes">QUOTES</a></li>
+      </ul>
+
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+      </div>
+    </div>
+
+    <hr class="footer-line">
+
+    <!-- Ligne 2 : copyright / mentions -->
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2018 Outpost Games, Inc. All Rights Reserved</p>
+      <ul class="footer-legal">
+        <li><a href="#">PRIVACY POLICY</a></li>
+        <li><a href="#">TERMS OF SERVICES</a></li>
+        <li><a href="#">CODE OF CONDUCT</a></li>
+      </ul>
+    </div>
+
+  </div>
+</footer>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
