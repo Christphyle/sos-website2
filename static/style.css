@@ -7,9 +7,6 @@ body {
   padding-right: 20px;
 }
 
-
-
-
 /********************** ===== HERO ===== ***********************************/
 .hero{
   position: relative;
@@ -18,7 +15,7 @@ body {
   background:
     /* léger voile global pour uniformiser les hautes lumières */
     linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.35) 65%, rgba(0,0,0,.55) 100%),
-    url("../images/hero-bg.jpg") center 20% / cover no-repeat #000;
+    url("images/hero-bg.jpg") center 20% / cover no-repeat #000;
   padding-left: 10%;
   padding-right: 10%;
 }
@@ -336,7 +333,7 @@ body {
   color: #fff;
   background: 
     linear-gradient(to right, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0.2) 70%), 
-    url("../images/feature-bg.jpg") center / cover no-repeat;  
+    url("images/feature-bg.jpg") center / cover no-repeat;  
   padding: 80px 0;
 }
 
@@ -518,7 +515,7 @@ body {
   padding: 80px 0;
   background:
     linear-gradient(180deg, rgba(0,0,0,.65), rgba(0,0,0,.85)), /* voile sombre pour lisibilité */
-    url("../images/requirements-bg.jpg") center center / cover no-repeat;
+    url("images/requirements-bg.jpg") center center / cover no-repeat;
   background-attachment: fixed; 
 }
 
@@ -745,6 +742,7 @@ h2.title-xl.quotes-title {
     min-height: 0;
     display: grid;
     gap: 14px;
+    margin-left: 130px;
   }
   .quote-card{
     position: static; transform: none; width: 100%;
@@ -771,8 +769,8 @@ h2.title-xl.quotes-title {
   position: absolute;
   inset: 0;
   background:
-    url("../images/newsletter-bg11.jpg");
-  z-index: 0;
+    url("images/newsletter-bg11.jpg");
+  z-index: 1;
 }
 
 /* Voile pour lisibilité du texte */
@@ -856,6 +854,25 @@ h2.title-xl.quotes-title {
   filter: brightness(1.05);
 }
 
+.nl-grid{
+  display: grid;           
+  grid-template-columns: 1fr;
+  gap: 24px;              
+}
+
+.nl-content{
+  max-width: 720px;      
+}
+
+.nl-text{
+  overflow-wrap: anywhere;  
+  hyphens: auto;          
+}
+
+.newsletter-section{
+  padding-right: clamp(16px, 4vw, 40px);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .newsletter-section {
@@ -863,7 +880,7 @@ h2.title-xl.quotes-title {
     --artW: 100vw; 
   }
   .newsletter-section::before {
-    background: url("../images/newsletter-bg.jpg") center 25% / cover no-repeat,
+    background: url("images/newsletter-bg.jpg") center 25% / cover no-repeat,
       #0a0a0a;
     opacity: 0.35; 
   }
@@ -871,8 +888,6 @@ h2.title-xl.quotes-title {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 60%);
   }
 }
-
-
 
 /********** ===== FOOTER (maquette) ===== ************/
 .footer{
@@ -948,3 +963,37 @@ h2.title-xl.quotes-title {
   .footer-nav{ justify-content:flex-start; gap:18px; flex-wrap:wrap; }
   .footer-bottom{ flex-direction:column; align-items:flex-start; gap:8px; }
 }
+
+/************************************************************
+/*Empêche le scroll horizontal si un petit débordement subsiste */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/*Le trait "about-rule" ne doit pas dépasser en mobile */
+@media (max-width: 980px){
+  .about-rule { width: 100%; }
+}
+
+/*Le bouton "next" du slider ne doit pas sortir de l'écran en mobile */
+@media (max-width: 640px){
+  .ctrl-next { right: 6px; }    
+  .sos-slider { width: 100%; }   
+}
+
+/*Sécurité générale : tout calcule ses tailles avec le border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*Les images ne doivent pas pousser la page plus large */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+/******************************************************************************
+
+
